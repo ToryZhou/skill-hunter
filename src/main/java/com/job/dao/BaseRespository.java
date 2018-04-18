@@ -4,6 +4,7 @@
 package com.job.dao;
 
 import com.job.common.util.FieldUtil;
+import com.job.enumerate.Constant;
 import com.job.enumerate.EntityEnum;
 
 import org.springframework.data.repository.NoRepositoryBean;
@@ -24,7 +25,7 @@ public interface BaseRespository<T, ID extends Serializable> extends PagingAndSo
 
     default void saveUnset(T entity) {
         try {
-            Object id = FieldUtil.getFieldValueByName(EntityEnum.FIELD_ID.getName(), entity);
+            Object id = FieldUtil.getFieldValueByName(Constant.Entity.FIELD_ID, entity);
             if (Objects.isNull(id)) {
                 save(entity);
                 return;

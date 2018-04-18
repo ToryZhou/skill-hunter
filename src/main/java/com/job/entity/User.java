@@ -1,6 +1,8 @@
 package com.job.entity;
 
 
+import com.job.enumerate.Constant;
+import com.job.enumerate.EntityEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +19,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @Entity
-@Table(name = "user", catalog = "skill_hunter")
+@Table(name = Constant.Entity.TABLE_USER, catalog = Constant.Entity.CATALOG_SKILL_HUNBER)
 public class User extends BaseEntity {
 
     private String name;

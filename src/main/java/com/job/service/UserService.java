@@ -13,6 +13,8 @@ public class UserService extends BaseService {
     @Autowired
     private UserRepository userRepository;
 
+    //得分 由 level+(levelSelf-levelOther)*2,需考虑
+
     public void save(User user){
         initSave(user);
         userRepository.save(user);
