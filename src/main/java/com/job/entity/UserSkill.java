@@ -1,11 +1,16 @@
 package com.job.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import com.job.enumerate.Constant;
+import lombok.Getter;
+import lombok.Setter;
 
-public class UserSkill {
+import javax.persistence.*;
+
+@Getter
+@Setter
+@Entity
+@Table(name = Constant.Entity.TABLE_USER_SKILL, catalog = Constant.Entity.CATALOG_SKILL_HUNBER)
+public class UserSkill extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "skill")
