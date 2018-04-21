@@ -1,7 +1,11 @@
 package com.job.entity;
 
 
+import com.job.common.util.UniqueString;
+
 import lombok.Data;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -41,6 +45,7 @@ public abstract class BaseEntity implements Serializable {
 
     @PrePersist
     protected void prePersist() {
+        if (StringUtils.isBlank(this.id)) id = UniqueString.uuidUniqueString();
         if (this.dataChangeCreatedTime == null) dataChangeCreatedTime = new Date();
         if (this.dataChangeLastModifiedTime == null) dataChangeLastModifiedTime = new Date();
     }

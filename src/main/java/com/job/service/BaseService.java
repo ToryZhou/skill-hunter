@@ -15,7 +15,6 @@ public class BaseService {
     }
 
     private void initialPropertiesForCreatedObject(BaseEntity baseEntity) {
-        baseEntity.setId(UniqueString.uuidUniqueString());
         baseEntity.setDataChangeCreatedBy("admin");
         baseEntity.setDataChangeLastModifiedBy("admin");
     }
