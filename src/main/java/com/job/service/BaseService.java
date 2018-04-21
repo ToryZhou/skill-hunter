@@ -1,6 +1,5 @@
 package com.job.service;
 
-import com.job.common.util.UniqueString;
 import com.job.entity.BaseEntity;
 
 import java.util.Objects;
