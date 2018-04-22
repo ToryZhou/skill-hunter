@@ -4,11 +4,8 @@ import com.job.entity.User;
 
 import com.job.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,12 @@ public class UserController {
     public void get() {
         System.out.println("get");
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<?> findById(@PathVariable String id) {
+        return ResponseEntity.ok().body(userService.findById(id));
+    }
+
     @PostMapping
     public void save(@RequestBody @Valid User user) {
         userService.save(user);

@@ -15,12 +15,16 @@ public class UserService extends BaseService {
 
     //得分 由 level+(levelSelf-levelOther)*2,需考虑
 
-    public void save(User user){
+    public void save(User user) {
         initSave(user);
         userRepository.save(user);
     }
 
     public void saveAll(List<User> userList) {
         userRepository.saveAll(userList);
+    }
+
+    public User findById(String id) {
+        return userRepository.findById(id).get();
     }
 }
