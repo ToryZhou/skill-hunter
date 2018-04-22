@@ -8,6 +8,7 @@ import java.util.List;
 
 public class MerkleTreeTest {
 
+    // todo 怎么通过默克尔树进行零知识证明
     @Test
     public void test(){
         List<String> tempTxList = new ArrayList();
