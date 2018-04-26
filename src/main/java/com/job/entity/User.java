@@ -29,4 +29,7 @@ public class User extends BaseEntity {
     private String phone;
     private String weChat;
 
+    private Integer level;
+    private Integer experience;
+
 }
