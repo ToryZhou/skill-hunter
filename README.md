@@ -24,3 +24,6 @@ http://localhost:8888/druid/index.html
 
 # Design pattern
 
+# OpenID
+
+# algorithm
